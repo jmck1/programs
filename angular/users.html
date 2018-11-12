@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<title>First Angular Page</title>
+	<style type="text/css">
+		#div1{margin: 100px 0px 0px 100px;}
+		input, th, td, label, button, label{font-size: 24px;}
+		table, th, td{border: 1px solid black;}
+		#but1{margin: 30px 40px 0px 40px;}
+		table{margin-top: 60px;}
+		.lab1{display: block;}
+		.lab2{
+			display: block;
+			margin-top: 50px;
+		}
+	</style>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+	<script type="text/javascript">
+		var myappmodule = angular.module('myapp', []);
+		myappmodule.controller('userController', function($scope){
+			$scope.users = [];
+			$scope.create = function(){
+				console.log('create: ', $scope.newuser);
+				$scope.users.push($scope.newuser);
+				$scope.newuser = {};
+			}
+			$scope.delete = function(num){
+				console.log('Detele Index: ', num);
+				$scope.users.splice(num, 1);
+			}
+		});
+	</script>
+</head>
+<body>
+	<div id="div1" ng-controller='userController'>
+		<form>
+			<label class="lab1">
+				First Name: <input type="text" ng-model='newuser.first' autofocus>
+			</label>
+			<label class="lab1">Last Name: <input type="text" ng-model='newuser.last'></label>
+			<label class="lab1">
+				Favorite Language: <input type="text" ng-model='newuser.language'>
+			</label>
+		</form>
+		<button id="but1" ng-click='create()'>Create User</button>
+		<table>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Favorite Language</th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat='user in users'>
+				<td>{{user.first}}</td>
+				<td>{{user.last}}</td>
+				<td>{{user.language}}</td>
+				<td><button ng-click='delete($index)'>Delete</button></td>
+			</tr>
+		</table>
+		<label class="lab2"
+			ng-if="newuser.first && !newuser.last && !newuser.language">
+			Currently Typing: <span ng-bind='newuser.first'></span>
+		</label>
+		<label class="lab2"
+			ng-if='newuser.last && newuser.first && !newuser.language'>
+			Currently Typing: <span ng-bind='newuser.last'></span>
+		</label>
+		<label class="lab2" 
+			ng-if='newuser.language'>
+			Currently Typing: <span ng-bind='newuser.language'></span>
+		</label>
+	</div>
+</body>
+</html>

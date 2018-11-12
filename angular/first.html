@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<title>First Angular Page</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+	<script type="text/javascript">
+		var myappmodule = angular.module('myapp', []);
+		myappmodule.controller('surveyController', function($scope){
+			$scope.myname = 'Your Name';
+			$scope.mylanguage = 'python';
+			$scope.mylibrary = 'angular';
+		});
+	</script>
+</head>
+<body>
+	<div ng-controller='surveyController'>
+		<h1>YO!! - My Name is {{myname}}. My Language is {{mylanguage}}. My Library is {{mylibrary}}.</h1>
+		<h1>YO!! - My Name is <span ng-bind=myname></span>. My Language is <span ng-bind=mylanguage></span>. My Library is <span ng-bind=mylibrary></span>.</h1>
+		<h1>YO!! - My Name is ng-bind=myname. My Language is {{mylanguage}}. My Library is {{mylibrary}}.</h1>
+	</div>
+</body>
+</html>

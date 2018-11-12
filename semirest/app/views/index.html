@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi Restful Routes</title>
+	<style type="text/css">
+		th,td{padding:7px;width:300px;border:1px solid black;text-align: center;
+	</style>
+</head>
+<body>
+	<h1>Products</h1>
+	<table>
+		<tr>
+			<th>Product Name</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Actions</th>
+		</tr>
+		{% for product in products: %}
+		<tr>
+			<td>{{product['name']}}</td>
+			<td>{{product['description']}}</td>
+			<td>{{product['price']}}</td>
+			<td>
+				<a href="/show/{{product['id']}}" style="font-size:20px;">Show</a>
+				&nbsp;|&nbsp;
+				<a href="/edit/{{product['id']}}" style="font-size:20px;">Edit</a>
+				&nbsp;|&nbsp;
+				<form action="/remove/{{product['id']}}" method="post"
+						style="display:inline-block;">
+					<input type="submit" value="Remove">
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<div style="height:60px;"></div>
+	<a href="/new" style="font-size:24px;">Add a new product</a>
+</body>
+</html>

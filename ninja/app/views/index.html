@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" href="/static/css/index.css" type="text/css">
+</head>
+<body>
+	<div id="gold">
+		<h1 id="gold1">Your Gold:</h1>
+		<div id="gold2">
+			<h1 id="gold3">{{gold}}</h1>
+		</div>
+	</div>
+	<div>
+		<div class="place">
+			<h1>Farm</h1>
+			<p>(earns 10-20 gold)</p>
+			<form action="/process" method="post">
+				<input type="hidden" name="place" value="farm">
+				<input type="submit" value="Find Gold!">
+			</form>
+		</div>
+		<div class="place">
+			<h1>Cave</h1>
+			<p>(earns 5-10 gold)</p>
+			<form action="/process" method="post">
+				<input type="hidden" name="place" value="cave">
+				<input type="submit" value="Find Gold!">
+			</form>
+		</div>
+		<div class="place">
+			<h1>House</h1>
+			<p>(earns 2-5 gold)</p>
+			<form action="/process" method="post">
+				<input type="hidden" name="place" value="house">
+				<input type="submit" value="Find Gold!">
+			</form>
+		</div>
+		<div class="place">
+			<h1>Casino</h1>
+			<p>(earns/takes 0-50 gold)</p>
+			<form action="/process" method="post">
+				<input type="hidden" name="place" value="casino">
+				<input type="submit" value="Find Gold!">
+			</form>
+		</div>
+	</div>
+	<h1 id="act">Activities</h1>
+	<div id="act1">{{html|safe}}</div>
+</body>
+</html>

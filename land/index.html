@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button!</title>
+	<style type="text/css">
+		button{
+			margin: 300px;
+			font-size: 36px;
+			background-color: blue;
+			color: white;
+		}
+	</style>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+	<script type="text/javascript">
+		var toggle = true;
+		$(document).ready(function(){
+			$('#button').click(function(){
+				if (toggle){
+					toggle = false;
+					$('#button').css('background-color', 'red');
+					$('#button').css('color', 'black');
+				}
+				else {
+					toggle = true;
+					$('#button').css('background-color', 'blue');
+					$('#button').css('color', 'white');
+				}
+			});
+			function min(){
+				$('#button').css('background-color', 'green');
+				$('#button').css('color', 'white');
+			}
+			function mout(){
+				if (toggle){
+					$('#button').css('background-color', 'blue');
+					$('#button').css('color', 'white');
+				}
+				else {
+					$('#button').css('background-color', 'red');
+					$('#button').css('color', 'black');
+				}
+			}
+			$('#button').hover(min, mout);
+		});
+	</script>
+</head>
+<body>
+	<button id="button">Hover Over the Button Then Press</button>
+</body>
+</html>

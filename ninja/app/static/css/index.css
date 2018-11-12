@@ -1,0 +1,49 @@
+/*CSS reset settings here*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#gold{
+	margin: 30px 0px 0px 20px;
+}
+#gold1{
+	display: inline-block;
+}
+#gold2{
+	display: inline-block;
+	background-color: black;
+	width: 100px;
+	text-align: center;
+	margin-left: 10px;
+}
+#gold3{
+	color: gold;
+}
+div.place{
+	display: inline-block;
+	border: 1px solid black;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	padding-top: 20px;
+	margin: 40px;
+}
+div.place p{
+	margin-top: 15px;
+}
+div.place form{
+	margin-top: 60px;
+}
+input{
+	padding: 7px;
+}
+#act{
+	margin: 20px 0px 0px 20px;
+}
+#act1{
+	margin: 20px;
+	height: 200px;
+	width: 1000px;
+	border: 2px solid black;
+	overflow: auto;
+}

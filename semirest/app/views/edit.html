@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi Restful Routes</title>
+	<style type="text/css">
+		label{display:block;margin:25px;}
+	</style>
+</head>
+<body>
+	<h1>Edit Product {{product['id']}}</h1>
+	<form action="/update/{{product['id']}}" method="post">
+		<label>Name: 
+			<input type="text" name="name" value="{{product['name']}}">
+		</label>
+		<label>Description: 
+			<input type="text" name="desc" value="{{product['description']}}">
+		</label>
+		<label>Price: 
+			<input type="text" name="price" value="{{product['price']}}">
+		</label>
+		<input type="submit" value="Update">
+	</form>
+	<div style="height:50px;"></div>
+	<a href="/show/{{product['id']}}" style="font-size:24px;">Show</a>
+	&nbsp;|&nbsp;
+	<a href="/" style="font-size:24px;">Back</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Time</title>
+</head>
+<body>
+<h1 style="margin:200px 0px 30px 200px;">
+	Random Word
+	{% if request.session.num %}
+	(Generated word #{{request.session.num}})
+	{% endif %}
+</h1>
+<form style="margin:30px 0px 30px 200px;" action="/random" method="post">
+	{% csrf_token %}
+	<input type="text" name="rand" value="{{request.session.rand}}"
+		style="display:block; font-size:30px; margin-bottom:30px;">
+	<input type="submit" value="Generate" style="display:block; font-size:30px;">
+</form>
+</body>
+</html>

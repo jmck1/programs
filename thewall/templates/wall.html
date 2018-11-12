@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THE WALL</title>
+</head>
+<body>
+	<h1 style="display:inline-block;">Coding Dojo Wall</h1>
+	<h3 style="display:inline-block;margin-left:400px;">
+		Welcome {{firstname}} {{lastname}}
+	</h3>
+	<a style="margin-left:200px;" href="/delete">Log Out</a>
+	<div style="border-top:3px solid black;"></div>
+	<h2>Post a Message</h2>
+	<form action="/postm" method="post">
+		<textarea name="text" style="display:block;height:80px;width:900px;"></textarea>
+		<input type="submit" value="Post a Message">
+	</form>
+	<div style="height:30px;"></div>
+	{% if mess %}
+	{% for i in range(mess | length): %}
+	<div>
+		<p style="margin-left:5px;">
+		{{mess[i]['firstname']}} {{mess[i]['lastname']}} - {{mess[i]['created']}}
+		</p>
+		<p style="margin-left:12px;">{{mess[i]['message']}}</p>
+		{% if comm and comm[i]: %}
+		{% for com in comm[i]: %}
+		<div>
+			<p style="margin-left:45px;">
+				{{com['firstname']}} {{com['lastname']}} - {{com['created']}}
+			</p>
+			<p style="margin-left:50px;">{{com['comment']}}</p>
+		</div>
+		{% endfor %}
+		{% endif %}
+		<h3 style="margin-left:51px;">Post a Comment</h3>
+		<form action="/postc/{{mess[i]['id']}}" method="post">
+			<textarea name="text"
+				style="display:block;height:60px;width:800px;margin-left:35px;">
+			</textarea>
+			<input type="submit" value="Post a Comment" style="margin-left:36px;">
+		</form>
+		<div style="height:30px;"></div>
+	</div>
+	{% endfor %}
+	{% endif %}
+</body>
+</html>

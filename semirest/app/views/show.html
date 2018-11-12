@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi Restful Routes</title>
+</head>
+<body>
+	<h1>Product {{product['id']}}</h1>
+	<h3>Name: &nbsp; {{product['name']}}</h3>
+	<h3>Description: &nbsp; {{product['description']}}</h3>
+	<h3>Price: &nbsp; {{product['price']}}</h3>
+	<div style="height:50px;"></div>
+	<a href="/edit/{{product['id']}}" style="font-size:24px;">Edit</a>
+	&nbsp;|&nbsp;
+	<a href="/" style="font-size:24px;">Back</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Time</title>
+	<style type="text/css">
+		*{font-size:30px;margin:0px 0px 30px 100px;}
+		div{border: 3px solid black;width: 650px;}
+	</style>
+</head>
+<body>
+	<div style="margin-top:100px;">
+		<h1>This Form has been Submitted {{request.session.num}} Times.</h1>
+	</div>
+	<div style="margin-top:50px;">
+		<h1 style="border-bottom:3px solid black;">Submitted Information</h1>
+		<h1>Name: {{request.session.name}}</h1>
+		<h1>Dojo Location: {{request.session.location}}</h1>
+		<h1>Favorite Language: {{request.session.language}}</h1>
+		<h1>Comment: {{request.session.comment}}</h1>
+	</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Courses</title>
+	<style type="text/css">
+		label{display:block;margin:25px;}
+		th,td{padding: 7px;width:300px;border: 1px solid black;}
+	</style>
+</head>
+<body>
+	<h2>Add a New Course</h2>
+	<form action="/add" method="post">
+		<label>Name: <input type="text" name="name"></label>
+		<label>Description: <textarea name="desc" value=''></textarea></label>
+		<input type="submit" value="Add">
+	</form>
+	<div style="height:50px;"></div>
+	<h2>Courses</h2>
+	<table>
+		<tr>
+			<th>Course Name</th>
+			<th>Description</th>
+			<th>Date Added</th>
+			<th>Actions</th>
+		</tr>
+		{% for course in courses: %}
+		<tr>
+			<td>{{course['title']}}</td>
+			<td>{{course['description']}}</td>
+			<td>{{course['created']}}</td>
+			<td><a href="/remove/{{course['id']}}">remove</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

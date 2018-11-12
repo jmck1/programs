@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THE WALL</title>
+	<style type="text/css">label{display: block;}</style>
+</head>
+<body>
+	<h1>If You are a New User Register with THE WALL</h1>
+	{% with messages = get_flashed_messages() %}
+    	{% if messages %}
+      		{% for message in messages %}
+        		<p>{{message}}</p>
+      		{% endfor %}
+    	{% endif %}
+  	{% endwith %}
+	<form action='/regis' method='post'>
+		<label>Enter First Name:<input type="text" name="first"></label>
+		<label>Enter Last Name:<input type="text" name="last"></label>
+		<label>Enter Email Address:<input type="text" name="email"></label>
+		<label>Enter Password:<input type="password" name="password"></label>
+		<label>Confirm Password:<input type="password" name="confirm"></label>
+		<input type="submit" value="Register">
+	</form>
+	<h1 style="margin-top:60px;">If Already Regsitered Log In Here</h1>
+	<form action="/login" method="post">
+		<label>Enter Email Address:<input type="text" name="email"></label>
+		<label>Enter Password:<input type="password" name="password"></label>
+		<input type="submit" value="Log In">
+	</form>
+</body>
+</html>

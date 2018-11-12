@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+</head>
+<body>
+	<h1>Registration Form with Validation</h1>
+	{% with messages = get_flashed_messages() %}
+    	{% if messages %}
+      		{% for message in messages %}
+        		<p>{{message}}</p>
+      		{% endfor %}
+    	{% endif %}
+  	{% endwith %}
+	<form action='/survey' method='post'>
+		<label>First Name:<input type="text" name="first"></label>
+		<label>Last Name:<input type="text" name="last"></label>
+		<label>Email Address:<input type="text" name="email"></label>
+		<label>Enter Password:<input type="password" name="password"></label>
+		<label>Confirm Password:<input type="password" name="confirm"></label>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

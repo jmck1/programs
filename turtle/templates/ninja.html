@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+</head>
+	{% if (color == 'all') or (color == 'blue'): %}
+		<img src="{{ url_for('static', filename='leonardo.jpg') }}">
+	{% endif %}
+	{% if (color == 'all') or (color == 'orange'): %}
+		<img src="{{ url_for('static', filename='michelangelo.jpg') }}">
+	{% endif %}
+	{% if (color == 'all') or (color == 'red'): %}
+		<img src="{{ url_for('static', filename='raphael.jpg') }}">
+	{% endif %}
+	{% if (color == 'all') or (color == 'purple'): %}
+		<img src="{{ url_for('static', filename='donatello.jpg') }}">
+	{% endif %}
+	{% if (color != 'all') and (color != 'blue') and (color != 'orange') and
+	       (color != 'red') and (color != 'purple'): %}
+		<img src="{{ url_for('static', filename='notapril.jpg') }}">
+	{% endif %}
+</html>
